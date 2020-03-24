@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+    <title type="text">scott-wong blog site</title>
+    <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
+    <updated>2020-03-24T18:07:16+08:00</updated>
+    <id>https://scott-wong.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://scott-wong.github.io/" />
+    <link rel="self" type="application/atom+xml" href="https://scott-wong.github.io/atom.xml" />
+    <author>
+            <name>scott-wong</name>
+            <uri>https://scott-wong.github.io/</uri>
+            
+                <email>wyuleo@gmail.com</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    <generator uri="https://gohugo.io/" version="0.68.1">Hugo</generator>
+        <entry>
+            <title type="text">Hello</title>
+            <link rel="alternate" type="text/html" href="https://scott-wong.github.io/post/hello/" />
+            <id>https://scott-wong.github.io/post/hello/</id>
+            <updated>2020-03-24T17:21:29+08:00</updated>
+            <published>2020-03-24T17:05:58+08:00</published>
+            <author>
+                    <name>scott-wong</name>
+                    <uri>https://scott-wong.github.io/</uri>
+                    <email>wyuleo@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[first hugo blog.]]></summary>
+            
+                <content type="html"><![CDATA[<p>first hugo blog.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+</feed>

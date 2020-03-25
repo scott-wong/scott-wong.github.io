@@ -3,31 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://scott-wong.github.io/tags/c4%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/categories/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/posts/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/tags/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/tags/togaf/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/posts/methodology/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/tags/%E6%95%8F%E6%8D%B7/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2020-03-25T14:40:31+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://scott-wong.github.io/about/</loc>
     <lastmod>2020-03-24T17:21:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://scott-wong.github.io/</loc>
+    <loc>https://scott-wong.github.io/posts/hello/</loc>
     <lastmod>2020-03-24T17:21:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://scott-wong.github.io/post/hello/</loc>
-    <lastmod>2020-03-24T17:21:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://scott-wong.github.io/post/</loc>
-    <lastmod>2020-03-24T17:21:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://scott-wong.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://scott-wong.github.io/tags/</loc>
   </url>
   
 </urlset>

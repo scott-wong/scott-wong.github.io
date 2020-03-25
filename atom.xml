@@ -2,9 +2,9 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-    <title type="text">scott-wong blog site</title>
+    <title type="text">scott-wong&#39;s blog</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2020-03-24T18:07:16+08:00</updated>
+    <updated>2020-03-25T14:45:02+08:00</updated>
     <id>https://scott-wong.github.io/</id>
     <link rel="alternate" type="text/html" href="https://scott-wong.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://scott-wong.github.io/atom.xml" />
@@ -17,9 +17,245 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.68.1">Hugo</generator>
         <entry>
+            <title type="text">企业架构系列：云原生基础设施选型</title>
+            <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/methodology/" />
+            <id>https://scott-wong.github.io/posts/methodology/</id>
+            <updated>2020-03-25T14:40:31+08:00</updated>
+            <published>2020-03-25T09:56:21+08:00</published>
+            <author>
+                    <name>scott-wong</name>
+                    <uri>https://scott-wong.github.io/</uri>
+                    <email>wyuleo@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    
+    <summary type="html"><![CDATA[企业架构系列：云原生基础设施选型 为了降低企业IT综合成本，企业全面上云已是大势所趋，……]]></summary>
+            
+                <content type="html"><![CDATA[<h1 id="企业架构系列云原生基础设施选型">企业架构系列：云原生基础设施选型</h1>
+<p>为了降低企业IT综合成本，企业全面上云已是大势所趋，但是上云路径多种多样，尽管公有云优势明显，大公司很多仍倾向自建私有云或混合云，不希望被单一公有云捆绑。<br>
+近年来云原生架构日趋成熟，常用的k8s+docker+devops工具即可搭建，但是在私有云上自建维护一套这样的云原生基础设施绝非易事，通常需要成立独立的团队维护。<br>
+本文基于作者多年项目实践经验和数月的研究提出云原生基础设施的选型建议，主要面向有私有云部署需求的公司，小公司建议直接上公有云。</p>
+<hr>
+<h2 id="1-选型清单">1. 选型清单</h2>
+<ul>
+<li>企业架构设计：TOGAF + <a href="https://c4model.com/">C4模型</a></li>
+<li>敏捷项目管理工具&amp;知识共享：<a href="https://www.tapd.cn/">TAPD</a></li>
+<li>容器管理平台：<a href="https://kubesphere.com.cn/">Kubesphere</a></li>
+<li>代码管理工具&amp;代码评审：Gitlab</li>
+<li>CI/CD工具：Kubesphere集成的Jenkins流水线</li>
+<li>代码质量扫描工具：Kubesphere集成的SonarQube</li>
+</ul>
+<h2 id="2-具体选型逻辑">2. 具体选型逻辑</h2>
+<h3 id="21-企业架构设计togaf--c4模型httpsc4modelcom">2.1 企业架构设计：TOGAF + <a href="https://c4model.com/">C4模型</a></h3>
+<p>工作中经常会与业务和技术人员沟通架构设计，发现每个人画出来的架构图都不同，尤其在敏捷开发盛行的当下，架构文档在大幅缩减，很多人已经弃用UML。最近发现C4模型能很好的描述软件架构，而且容易上手易于理解。<br>
+C4模型是Simon Brown创建，目前欧美用的比较多，国内相关使用案例找到的不多。但是作者认为可以在项目团队中广泛使用。<br>
+C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）——一系列分层的图表，可以用这些图表来描述不同缩放级别的软件架构，每种图表都适用于不同的受众。可以将其视为代码的地图。
+C4包含四种核心图和三种附加图：</p>
+<ul>
+<li>系统上下文图(System Context diagram)</li>
+<li>容器图(Container diagram)</li>
+<li>组件图(Component diagram)</li>
+<li>代码图(Code diagram), 使用UML类图、实体关系图等，通常不需要画，IDE生成即可</li>
+<li>系统全景图(System Landscape diagram)</li>
+<li>动态图(Dynamic diagram), 类似UML通讯图，可让初级开发人员在写代码前画出来评估，避免后期才发现错误</li>
+<li>部署图(Deployment diagram), 可用于开发与运维沟通
+详细内容可访问C4模型官网，介绍的很清楚，具体画图可用draw.io+<a href="https://tobiashochguertel.github.io/c4-draw.io/c4.js">C4插件</a>.<br>
+<img src="/images/c4-overview.png" alt="C4模型概览"></li>
+</ul>
+<h3 id="22-敏捷项目管理工具tapdhttpswwwtapdcn">2.2 敏捷项目管理工具：<a href="https://www.tapd.cn/">TAPD</a></h3>
+<p>备选：有独立部署需求选<a href="https://www.zentao.net/">禅道</a><br>
+TAPD的优势</p>
+<ul>
+<li>提供轻量协作、敏捷研发完整支持</li>
+<li>跨端支持，集成企业微信</li>
+<li>文档和Wiki可用于知识共享
+企业版有DevOps功能，这个禅道开源版有提供，可按需选择。</li>
+</ul>
+<h3 id="23-容器管理平台kubespherehttpskubespherecomcn">2.3 容器管理平台<a href="https://kubesphere.com.cn/">Kubesphere</a></h3>
+<p>备选：Rancher<br>
+Kubesphere和Rancher都是开源产品，Kubesphere相比Rancher提供了针对开发人员更友好的界面操作并深度集成Jenkins、SonarQube等CI/CD工具，同时提供统一日志、统一监控告警等功能。
+当前版本2.1.1已生产可用，据说光大银行在测试Kubesphere。
+Kubesphere优势</p>
+<ul>
+<li>通过Helm快速部署mysql、redis等应用</li>
+<li>集成应用商店openpitrix，可上传自有应用</li>
+<li>统一日志、统一监控告警</li>
+</ul>
+<h3 id="24-代码管理工具代码评审gitlab">2.4 代码管理工具&amp;代码评审：Gitlab</h3>
+<p>备选：Gitee, Github<br>
+代码管理没多少选择，自建Gitlab开源版提供的功能够用了。
+代码审查还有Gerrit可选，不过Gitlab也能通过merge request进行代码评审，而且更符合开发人员习惯。</p>
+<h3 id="25-cicd工具kubesphere集成的jenkinssonarqube流水线">2.5 CI/CD工具：Kubesphere集成的Jenkins+SonarQube流水线</h3>
+<p>在代码目录配置Jenkinsfile，通过Kubesphere实现自动拉取代码并构建maven, nodejs等项目工程，代码质量扫描，自动构建成Docker镜像并发布到指定k8s集群中。
+典型Java项目的Jenkinsfile如下：</p>
+<pre><code>pipeline {
+    agent {
+        node {
+            label 'maven'
+        }
+    }
+
+    parameters {
+        string(name:'TAG_NAME',defaultValue: '',description:'')
+    }
+
+    environment {
+        // app label
+        PROJECT = 'ry'
+        NAMESPACE = 'cargo-dev'
+        // 服务唯一标识
+        APP_NAME = 'ruoyi-api'
+        // 项目git地址，用于push with tag
+        GIT_URL = 'gitee.com/scott-wong/RuoYi-Vue.git'
+
+        // 以下是devops公共配置
+        // 镜像密钥，官方dockerhub-cr，阿里云aliyun-cr 海航云 hna-cr
+        DOCKER_SECRETS = 'hna-cr'
+        GIT_CREDENTIAL_ID = 'gitee-id'
+        KUBECONFIG_CREDENTIAL_ID = 'cargo-kubeconfig'
+        // 阿里云镜像用aliyun-id，海航云镜像用hna-id
+        DOCKER_CREDENTIAL_ID = 'hna-id'
+        // 阿里云registry.cn-hangzhou.aliyuncs.com，海航云bjdhub.haihangyun.com
+        REGISTRY = 'bjdhub.haihangyun.com'
+        // 阿里云scottwong，海航云wangyu5
+        DOCKERHUB_NAMESPACE = 'wangyu5'
+        // 代码检测
+        SONAR_CREDENTIAL_ID= 'sonar-token'
+    }
+
+    stages {
+        stage ('checkout scm') {
+            steps {
+                checkout(scm)
+            }
+        }
+
+        stage ('unit test') {
+            steps {
+                container ('maven') {
+                    sh 'cd ruoyi &amp;&amp; mvn clean test'
+                }
+            }
+        }
+
+        stage('sonarqube analysis') {
+            steps {
+                container ('maven') {
+                    withCredentials([string(credentialsId: &quot;$SONAR_CREDENTIAL_ID&quot;, variable: 'SONAR_TOKEN')]) {
+                        withSonarQubeEnv('sonar') {
+                            sh &quot;cd ruoyi &amp;&amp; mvn sonar:sonar -Dsonar.java.binaries=target/classes -Dsonar.branch=$BRANCH_NAME -Dsonar.login=$SONAR_TOKEN&quot;
+                        }
+                    }
+                    timeout(time: 1, unit: 'HOURS') {
+                        waitForQualityGate abortPipeline: true
+                    }
+                }
+            }
+        }
+
+        stage ('build &amp; push') {
+            steps {
+                container ('maven') {
+                    sh 'cd ruoyi &amp;&amp; mvn -Dmaven.test.skip=true clean package'
+                    sh 'cd ruoyi &amp;&amp; docker build -f Dockerfile -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
+                    withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : &quot;$DOCKER_CREDENTIAL_ID&quot; ,)]) {
+                        sh 'echo &quot;$DOCKER_PASSWORD&quot; | docker login $REGISTRY -u &quot;$DOCKER_USERNAME&quot; --password-stdin'
+                        sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER'
+                    }
+                }
+            }
+        }
+
+        stage('push latest'){
+           when{
+                branch 'master'
+           }
+           steps{
+                container ('maven') {
+                  sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:latest '
+                  sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:latest '
+                }
+           }
+        }
+
+        stage('deploy to dev') {
+            when{
+                branch 'master'
+            }
+            steps {
+                input(id: 'deploy-to-dev', message: 'deploy to dev?')
+                kubernetesDeploy(configs: 'ruoyi/deploy/dev/**', enableConfigSubstitution: true, kubeconfigId: &quot;$KUBECONFIG_CREDENTIAL_ID&quot;)
+            }
+        }
+
+        stage('push with tag'){
+            when{
+                expression{
+                    return params.TAG_NAME =~ /v.*/
+                }
+            }
+            steps {
+                container ('maven') {
+                    input(id: 'release-image-with-tag', message: 'release image with tag?')
+                    withCredentials([usernamePassword(credentialsId: &quot;$GIT_CREDENTIAL_ID&quot;, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                        sh 'git config --global user.email &quot;wang_yu5@hnair.com&quot; '
+                        sh 'git config --global user.name &quot;scottwong&quot; '
+                        sh 'git tag -a $TAG_NAME -m &quot;$TAG_NAME&quot; '
+                        sh 'git push https://$GIT_USERNAME:$GIT_PASSWORD@$GIT_URL --tags --ipv4'
+                    }
+                    sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:$TAG_NAME '
+                    sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:$TAG_NAME '
+                }
+            }
+        }
+    }
+}
+</code></pre>]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/" term="架构" label="架构" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://scott-wong.github.io/tags/togaf/" term="TOGAF" label="TOGAF" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://scott-wong.github.io/tags/c4%E6%A8%A1%E5%9E%8B/" term="C4模型" label="C4模型" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://scott-wong.github.io/tags/%E6%95%8F%E6%8D%B7/" term="敏捷" label="敏捷" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Hello</title>
-            <link rel="alternate" type="text/html" href="https://scott-wong.github.io/post/hello/" />
-            <id>https://scott-wong.github.io/post/hello/</id>
+            <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/hello/" />
+            <id>https://scott-wong.github.io/posts/hello/</id>
             <updated>2020-03-24T17:21:29+08:00</updated>
             <published>2020-03-24T17:05:58+08:00</published>
             <author>

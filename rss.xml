@@ -23,10 +23,56 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 25 Mar 2020 14:45:02 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2020 17:52:45 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Cncf Landscope</title>
+                <link>https://scott-wong.github.io/posts/cncf-landscope/</link>
+                <guid isPermaLink="true">https://scott-wong.github.io/posts/cncf-landscope/</guid>
+                <pubDate>Wed, 25 Mar 2020 17:54:08 +0800</pubDate>
+                
+                    <author>wyuleo@gmail.com (scott-wong)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description><![CDATA[]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/tags/cncf/">CNCF</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>企业架构系列：云原生基础设施选型</title>
@@ -39,22 +85,35 @@
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description><![CDATA[<h1 id="企业架构系列云原生基础设施选型">企业架构系列：云原生基础设施选型</h1>
-<p>为了降低企业IT综合成本，企业全面上云已是大势所趋，但是上云路径多种多样，尽管公有云优势明显，大公司很多仍倾向自建私有云或混合云，不希望被单一公有云捆绑。<br>
+<p>为了降低企业IT综合成本，企业全面上云已是大势所趋，但是上云路径多种多样，尽管公有云优势明显，但因监管需要、数据安全等因素，大公司很多仍倾向自建私有云或混合云，不希望被单一公有云捆绑。<br>
 近年来云原生架构日趋成熟，常用的k8s+docker+devops工具即可搭建，但是在私有云上自建维护一套这样的云原生基础设施绝非易事，通常需要成立独立的团队维护。<br>
-本文基于作者多年项目实践经验和数月的研究提出云原生基础设施的选型建议，主要面向有私有云部署需求的公司，小公司建议直接上公有云。</p>
+本文基于作者多年跨行业项目实践经验和数月来的研究提出云原生基础设施的选型建议，主要面向有私有云部署需求的公司，小公司建议直接上公有云。<br>
+毕竟每家公司的组织结构和业务技术需求千差万别，文中的选型也没法做到面面俱到，如有疏漏和错误，敬请指正。</p>
 <hr>
+<h2 id="云原生生态图">云原生生态图</h2>
+<p>从全局视角了解云原生生态可以直接看<a href="https://landscape.cncf.io/">CNCF全景图</a>，截止2020年3月25日已有1,359个图标。包含应用定义与开发层（App Definition and Development）、编排与治理层（Orchestration Management）、运行时层（Runtime）、供应保障层（Provisioning）、云服务商（Special）、平台（Platform）、观察与分析（Observability and Analysis）、无服务（Serverless）和CNCF成员（Members）八个层次。<br>
+<img src="/images/cncf-landscope.png" alt="CNCF全景图">
+作者并没有全面研究每个层级，下面仅列出日常用到的产品或工具，下篇文章计划按全景图的层级划分重新梳理选型。</p>
 <h2 id="1-选型清单">1. 选型清单</h2>
 <ul>
 <li>企业架构设计：TOGAF + <a href="https://c4model.com/">C4模型</a></li>
 <li>敏捷项目管理工具&amp;知识共享：<a href="https://www.tapd.cn/">TAPD</a></li>
 <li>容器管理平台：<a href="https://kubesphere.com.cn/">Kubesphere</a></li>
+<li>镜像仓库&amp;镜像安全：Harbor + Clair</li>
 <li>代码管理工具&amp;代码评审：Gitlab</li>
 <li>CI/CD工具：Kubesphere集成的Jenkins流水线</li>
 <li>代码质量扫描工具：Kubesphere集成的SonarQube</li>
+<li>应用定义工具：Kubesphere集成的Helm</li>
+<li>APM&amp;调用链追踪：SkyWalking</li>
 </ul>
 <h2 id="2-具体选型逻辑">2. 具体选型逻辑</h2>
 <h3 id="21-企业架构设计togaf--c4模型httpsc4modelcom">2.1 企业架构设计：TOGAF + <a href="https://c4model.com/">C4模型</a></h3>
-<p>工作中经常会与业务和技术人员沟通架构设计，发现每个人画出来的架构图都不同，尤其在敏捷开发盛行的当下，架构文档在大幅缩减，很多人已经弃用UML。最近发现C4模型能很好的描述软件架构，而且容易上手易于理解。<br>
+<p><strong>TOGAF</strong><br>
+关于企业架构（EA）设计业界主要有美国联邦政府体系架构框架FEA(F)、美国国防部体系架构框架（DoDAF）和开放组织体系架构框架（TOGAF），目前各个框架在发展过程中都在互相借鉴。针对企业市场TOGAF更加适合而且适合按需裁剪。另外电子政务从业者建议看下《电子政务顶层设计理论、方法与实践》这本书，该书作者结合TOGAF等框架和中国电子政务特色提出了CGAF框架。
+TOGAF的核心是架构开发方法ADM，计划独立成文描述TOGAF在敏捷项目交付的实践。<br>
+<img src="/images/togaf-adm.png" alt="ADM开发方法"><br>
+<strong>C4模型</strong><br>
+工作中经常会与业务和技术人员沟通架构设计，发现每个人画出来的架构图都不同，尤其在敏捷开发盛行的当下，架构文档在大幅缩减，很多人已经弃用UML。最近发现C4模型能很好的描述软件架构，而且容易上手易于理解。
 C4模型是Simon Brown创建，目前欧美用的比较多，国内相关使用案例找到的不多。但是作者认为可以在项目团队中广泛使用。<br>
 C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）——一系列分层的图表，可以用这些图表来描述不同缩放级别的软件架构，每种图表都适用于不同的受众。可以将其视为代码的地图。
 C4包含四种核心图和三种附加图：</p>
@@ -66,7 +125,7 @@ C4包含四种核心图和三种附加图：</p>
 <li>系统全景图(System Landscape diagram)</li>
 <li>动态图(Dynamic diagram), 类似UML通讯图，可让初级开发人员在写代码前画出来评估，避免后期才发现错误</li>
 <li>部署图(Deployment diagram), 可用于开发与运维沟通
-详细内容可访问C4模型官网，介绍的很清楚，具体画图可用draw.io+<a href="https://tobiashochguertel.github.io/c4-draw.io/c4.js">C4插件</a>.<br>
+详细内容可访问C4模型官网，介绍的很清楚，具体画图可用我基于RicardoNiepel/C4-PlantUML优化的<a href="https://github.com/scott-wong/C4-PlantUML">C4-PlantUML</a>或者使用draw.io+<a href="https://tobiashochguertel.github.io/c4-draw.io/c4.js">C4插件</a>.<br>
 <img src="/images/c4-overview.png" alt="C4模型概览"></li>
 </ul>
 <h3 id="22-敏捷项目管理工具tapdhttpswwwtapdcn">2.2 敏捷项目管理工具：<a href="https://www.tapd.cn/">TAPD</a></h3>
@@ -80,7 +139,7 @@ TAPD的优势</p>
 </ul>
 <h3 id="23-容器管理平台kubespherehttpskubespherecomcn">2.3 容器管理平台<a href="https://kubesphere.com.cn/">Kubesphere</a></h3>
 <p>备选：Rancher<br>
-Kubesphere和Rancher都是开源产品，Kubesphere相比Rancher提供了针对开发人员更友好的界面操作并深度集成Jenkins、SonarQube等CI/CD工具，同时提供统一日志、统一监控告警等功能。
+Kubesphere和Rancher都是开源产品，Rancher相对成熟些，案例比较多，不过Kubesphere相比Rancher提供了针对开发人员更友好的界面操作并深度集成Jenkins、SonarQube等CI/CD工具，同时提供统一日志、统一监控告警等功能。
 当前版本2.1.1已生产可用，据说光大银行在测试Kubesphere。
 Kubesphere优势</p>
 <ul>
@@ -116,16 +175,16 @@ Kubesphere优势</p>
         GIT_URL = 'gitee.com/scott-wong/RuoYi-Vue.git'
 
         // 以下是devops公共配置
-        // 镜像密钥，官方dockerhub-cr，阿里云aliyun-cr 海航云 hna-cr
-        DOCKER_SECRETS = 'hna-cr'
+        // 镜像密钥，官方dockerhub-cr，阿里云aliyun-cr
+        DOCKER_SECRETS = 'aliyun-cr'
         GIT_CREDENTIAL_ID = 'gitee-id'
         KUBECONFIG_CREDENTIAL_ID = 'cargo-kubeconfig'
-        // 阿里云镜像用aliyun-id，海航云镜像用hna-id
-        DOCKER_CREDENTIAL_ID = 'hna-id'
-        // 阿里云registry.cn-hangzhou.aliyuncs.com，海航云bjdhub.haihangyun.com
-        REGISTRY = 'bjdhub.haihangyun.com'
-        // 阿里云scottwong，海航云wangyu5
-        DOCKERHUB_NAMESPACE = 'wangyu5'
+        // 阿里云镜像用aliyun-id
+        DOCKER_CREDENTIAL_ID = 'aliyun-id'
+        // 阿里云registry.cn-hangzhou.aliyuncs.com
+        REGISTRY = 'registry.cn-hangzhou.aliyuncs.com'
+        // 阿里云scottwong
+        DOCKERHUB_NAMESPACE = 'scottwong'
         // 代码检测
         SONAR_CREDENTIAL_ID= 'sonar-token'
     }
@@ -205,8 +264,8 @@ Kubesphere优势</p>
                 container ('maven') {
                     input(id: 'release-image-with-tag', message: 'release image with tag?')
                     withCredentials([usernamePassword(credentialsId: &quot;$GIT_CREDENTIAL_ID&quot;, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                        sh 'git config --global user.email &quot;wang_yu5@hnair.com&quot; '
-                        sh 'git config --global user.name &quot;scottwong&quot; '
+                        sh 'git config --global user.email &quot;xxx&quot; '
+                        sh 'git config --global user.name &quot;scott-wong&quot; '
                         sh 'git tag -a $TAG_NAME -m &quot;$TAG_NAME&quot; '
                         sh 'git push https://$GIT_USERNAME:$GIT_PASSWORD@$GIT_URL --tags --ipv4'
                     }
@@ -217,7 +276,10 @@ Kubesphere优势</p>
         }
     }
 }
-</code></pre>]]></description>
+</code></pre><h2 id="26-应用定义工具helm">2.6 应用定义工具：Helm</h2>
+<p>Helm几乎是目前的事实标准，另一种应用定义模型OAM也值得关注。
+阿里巴巴宣布联合微软共同推出的开放应用模型项目（Open Application Model - OAM）</p>
+]]></description>
                 
                 
                 
@@ -235,6 +297,12 @@ Kubesphere优势</p>
                         
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
+                                
                             
                                 
                                 

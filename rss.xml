@@ -23,13 +23,117 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 26 Mar 2020 18:00:15 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 01 Apr 2020 16:12:14 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.github.io/rss.xml" />
         
         
             <item>
-                <title>企业架构系列：CNCF云原生全景图</title>
+                <title>企业架构系列：开发规范</title>
+                <link>https://scott-wong.github.io/posts/dev_guideline/</link>
+                <guid isPermaLink="true">https://scott-wong.github.io/posts/dev_guideline/</guid>
+                <pubDate>Wed, 01 Apr 2020 09:38:36 +0800</pubDate>
+                
+                    <author>wyuleo@gmail.com (scott-wong)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description><![CDATA[<h1 id="企业架构系列开发规范">企业架构系列：开发规范</h1>
+<h2 id="版本号">版本号</h2>
+<p>【强制】版本号遵循 <a href="https://semver.org/">SemVer 2 标准</a></p>
+<p><strong>语义化版本 2.0.0</strong><br>
+版本格式：主版本号.次版本号.修订号，版本号递增规则如下：</p>
+<ul>
+<li>主版本号：当你做了不兼容的 API 修改，</li>
+<li>次版本号：当你做了向下兼容的功能性新增，</li>
+<li>修订号：当你做了向下兼容的问题修正。</li>
+</ul>
+<p>先行版本号及版本编译元数据可以加到“主版本号.次版本号.修订号”的后面，作为延伸。</p>
+<h2 id="文档格式">文档格式</h2>
+<p>【推荐】Markdown格式<br>
+tips:
+md转word</p>
+<ul>
+<li>使用VSCode的Markdown预览，直接复制到Word里，保持格式。</li>
+<li><a href="http://www.writage.com">writage插件</a></li>
+</ul>
+<h2 id="后端开发规范">后端开发规范</h2>
+<h3 id="java">Java</h3>
+<p>【强制】<a href="https://developer.aliyun.com/special/tech-java">《Java开发手册》</a>,当前最新版1.5.0<br>
+【强制】IDEA插件<a href="https://plugins.jetbrains.com/plugin/10046-alibaba-java-coding-guidelines">Alibaba Java Coding Guidelines</a></p>
+<h2 id="前端开发规范">前端开发规范</h2>
+<h3 id="vue">Vue</h3>
+<p><a href="https://www.jianshu.com/p/8b095857f73e">Vue前端开发规范</a></p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">开发规范</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>企业架构系列：业务架构</title>
+                <link>https://scott-wong.github.io/posts/ea-ba/</link>
+                <guid isPermaLink="true">https://scott-wong.github.io/posts/ea-ba/</guid>
+                <pubDate>Fri, 27 Mar 2020 10:05:10 +0800</pubDate>
+                
+                    <author>wyuleo@gmail.com (scott-wong)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description><![CDATA[]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>企业架构系列：从CNCF云原生全景图里做技术选型</title>
                 <link>https://scott-wong.github.io/posts/cncf-landscope/</link>
                 <guid isPermaLink="true">https://scott-wong.github.io/posts/cncf-landscope/</guid>
                 <pubDate>Wed, 25 Mar 2020 17:54:08 +0800</pubDate>
@@ -38,7 +142,9 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>Writing...</p>
+                    <description><![CDATA[<p>从全局视角了解云原生生态可以直接看<a href="https://landscape.cncf.io/">CNCF全景图</a>，截止2020年3月25日已有1,359个图标。包含应用定义与开发层（App Definition and Development）、编排与治理层（Orchestration Management）、运行时层（Runtime）、供应保障层（Provisioning）、云服务商（Special）、平台（Platform）、观察与分析（Observability and Analysis）、无服务（Serverless）和CNCF成员（Members）八个层次。<br>
+<img src="/images/cncf-landscope.png" alt="CNCF全景图"></p>
+<p>Writing...</p>
 ]]></description>
                 
                 

@@ -10,7 +10,7 @@
         <title>scott-wong&#39;s blog</title>
         <link>https://scott-wong.github.io/</link>
         <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
-        <generator>Hugo 0.68.1 https://gohugo.io/</generator>
+        <generator>Hugo 0.68.3 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 01 Apr 2020 17:03:59 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 02 Apr 2020 10:40:59 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.github.io/rss.xml" />
         

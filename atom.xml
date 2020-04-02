@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">scott-wong&#39;s blog</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2020-04-02T10:40:59+08:00</updated>
+    <updated>2020-04-02T10:44:43+08:00</updated>
     <id>https://scott-wong.github.io/</id>
     <link rel="alternate" type="text/html" href="https://scott-wong.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://scott-wong.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">企业架构系列：开发规范</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/dev_guideline/" />
             <id>https://scott-wong.github.io/posts/dev_guideline/</id>
-            <updated>2020-04-02T10:40:51+08:00</updated>
+            <updated>2020-04-02T10:44:36+08:00</updated>
             <published>2020-04-01T09:38:36+08:00</published>
             <author>
                     <name>scott-wong</name>
@@ -91,16 +91,17 @@ md转word</p>
             <title type="text">企业架构系列：业务架构</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/ea-ba/" />
             <id>https://scott-wong.github.io/posts/ea-ba/</id>
-            <updated>2020-04-02T10:40:51+08:00</updated>
+            <updated>2020-04-02T10:44:36+08:00</updated>
             <published>2020-03-27T10:05:10+08:00</published>
             <author>
                     <name>scott-wong</name>
                     <uri>https://scott-wong.github.io/</uri>
                     <email>wyuleo@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[working...]]></summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[CGAF包括业务架构、数据架构、应用架构、技术及基础设施架构、安全架构。 working...]]></summary>
             
-                <content type="html"><![CDATA[<p>working...</p>
+                <content type="html"><![CDATA[<p>CGAF包括业务架构、数据架构、应用架构、技术及基础设施架构、安全架构。
+working...</p>
 ]]></content>
             
             
@@ -133,7 +134,7 @@ md转word</p>
             <title type="text">企业架构系列：从CNCF云原生全景图里做技术选型</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/cncf-landscope/" />
             <id>https://scott-wong.github.io/posts/cncf-landscope/</id>
-            <updated>2020-04-02T10:40:51+08:00</updated>
+            <updated>2020-04-02T10:44:36+08:00</updated>
             <published>2020-03-25T17:54:08+08:00</published>
             <author>
                     <name>scott-wong</name>
@@ -187,7 +188,7 @@ md转word</p>
             <title type="text">企业架构系列：云原生基础设施选型</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/methodology/" />
             <id>https://scott-wong.github.io/posts/methodology/</id>
-            <updated>2020-04-02T10:40:51+08:00</updated>
+            <updated>2020-04-02T10:44:36+08:00</updated>
             <published>2020-03-25T09:56:21+08:00</published>
             <author>
                     <name>scott-wong</name>
@@ -445,7 +446,7 @@ Kubesphere优势</p>
             <title type="text">Hello</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.github.io/posts/hello/" />
             <id>https://scott-wong.github.io/posts/hello/</id>
-            <updated>2020-04-02T10:40:51+08:00</updated>
+            <updated>2020-04-02T10:44:36+08:00</updated>
             <published>2020-03-24T17:05:58+08:00</published>
             <author>
                     <name>scott-wong</name>

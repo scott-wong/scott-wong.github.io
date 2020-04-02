@@ -3,9 +3,9 @@ entries:
   cmak:
   - apiVersion: v2
     appVersion: 3.0.0.4
-    created: "2020-04-01T17:52:05.1944186+08:00"
+    created: "2020-04-02T12:43:40.963342988+08:00"
     description: A Helm chart for CMAK
-    digest: 8c1107c8d2028aefc2e4507e332bf3bc997672825bd400f805abd3f2c5b7a781
+    digest: 617b0d2d07cad48931487e39a18e3786764b72d5d777e9843fb3583d93e0a7be
     home: https://github.com/scott-wong/helm-charts/cmak
     keywords:
     - kafka
@@ -15,26 +15,12 @@ entries:
     urls:
     - https://scott-wong.github.io/charts/cmak-0.1.1.tgz
     version: 0.1.1
-  - apiVersion: v2
-    appVersion: 3.0.0.4
-    created: "2020-04-01T17:52:05.1854421+08:00"
-    description: A Helm chart for CMAK
-    digest: 110c64f6067111ce606681d4989d48710b1a430a77607c135a893ab0ba9ced1e
-    home: https://github.com/scott-wong/helm-charts/cmak
-    keywords:
-    - kafka
-    - cmak
-    name: cmak
-    type: application
-    urls:
-    - https://scott-wong.github.io/charts/cmak-0.1.0.tgz
-    version: 0.1.0
   nacos:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2020-04-01T17:52:05.1964188+08:00"
+    created: "2020-04-02T12:43:40.964241909+08:00"
     description: A Nacos Helm chart for Kubernetes
-    digest: 138287a511580128d4699d1aaf3fdc31b5a147a52c3b8d4c5db6e1697111c605
+    digest: cb2b96661da9929f4484bdb47e43c6dc7d80da63132a0f4555fcb9d29171a9d7
     home: https://github.com/scott-wong/helm-charts/nacos
     icon: https://scott-wong.github.io/charts/icons/nacos_colorful.png
     keywords:
@@ -44,6 +30,6 @@ entries:
     name: nacos
     type: application
     urls:
-    - https://scott-wong.github.io/charts/nacos-0.1.0.tgz
-    version: 0.1.0
-generated: "2020-04-01T17:52:05.1844235+08:00"
+    - https://scott-wong.github.io/charts/nacos-0.1.1.tgz
+    version: 0.1.1
+generated: "2020-04-02T12:43:40.962732167+08:00"

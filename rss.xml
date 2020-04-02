@@ -9,21 +9,21 @@
     <channel>
         <title>scott-wong/岛民宇哥</title>
         <link>https://scott-wong.ga/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <description>scott-wong/岛民宇哥的个人网站，最近专注企业架构和云原生技术体系。</description>
         <generator>Hugo 0.68.3 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
-            <managingEditor>wyuleo@gmail.com (scott-wong)</managingEditor>
+            <managingEditor>wyuleo@gmail.com (scott-wong/岛民宇哥)</managingEditor>
         
         
-            <webMaster>wyuleo@gmail.com (scott-wong)</webMaster>
+            <webMaster>wyuleo@gmail.com (scott-wong/岛民宇哥)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 02 Apr 2020 16:59:26 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 02 Apr 2020 17:25:59 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.ga/rss.xml" />
         
@@ -34,7 +34,7 @@
                 <guid isPermaLink="true">https://scott-wong.ga/posts/dev_guideline/</guid>
                 <pubDate>Wed, 01 Apr 2020 09:38:36 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong)</author>
+                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -100,7 +100,7 @@ md转word</p>
                 <guid isPermaLink="true">https://scott-wong.ga/posts/ea-ba/</guid>
                 <pubDate>Fri, 27 Mar 2020 10:05:10 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong)</author>
+                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -140,7 +140,7 @@ working...</p>
                 <guid isPermaLink="true">https://scott-wong.ga/posts/cncf-landscope/</guid>
                 <pubDate>Wed, 25 Mar 2020 17:54:08 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong)</author>
+                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -189,7 +189,7 @@ working...</p>
                 <guid isPermaLink="true">https://scott-wong.ga/posts/methodology/</guid>
                 <pubDate>Wed, 25 Mar 2020 09:56:21 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong)</author>
+                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -442,7 +442,7 @@ Kubesphere优势</p>
                 <guid isPermaLink="true">https://scott-wong.ga/posts/hello/</guid>
                 <pubDate>Tue, 24 Mar 2020 17:05:58 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong)</author>
+                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 

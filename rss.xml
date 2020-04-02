@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>scott-wong&#39;s blog</title>
-        <link>https://scott-wong.github.io/</link>
+        <link>https://scott-wong.ga/</link>
         <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
         <generator>Hugo 0.68.3 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 02 Apr 2020 10:50:23 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 02 Apr 2020 16:21:06 +0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.github.io/rss.xml" />
+            <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.ga/rss.xml" />
         
         
             <item>
                 <title>企业架构系列：开发规范</title>
-                <link>https://scott-wong.github.io/posts/dev_guideline/</link>
-                <guid isPermaLink="true">https://scott-wong.github.io/posts/dev_guideline/</guid>
+                <link>https://scott-wong.ga/posts/dev_guideline/</link>
+                <guid isPermaLink="true">https://scott-wong.ga/posts/dev_guideline/</guid>
                 <pubDate>Wed, 01 Apr 2020 09:38:36 +0800</pubDate>
                 
                     <author>wyuleo@gmail.com (scott-wong)</author>
@@ -76,7 +76,7 @@ md转word</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                         
@@ -86,7 +86,7 @@ md转word</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">开发规范</category>
+                                    <category domain="https://scott-wong.ga/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">开发规范</category>
                                 
                             
                         
@@ -96,8 +96,8 @@ md转word</p>
         
             <item>
                 <title>企业架构系列：业务架构</title>
-                <link>https://scott-wong.github.io/posts/ea-ba/</link>
-                <guid isPermaLink="true">https://scott-wong.github.io/posts/ea-ba/</guid>
+                <link>https://scott-wong.ga/posts/ea-ba/</link>
+                <guid isPermaLink="true">https://scott-wong.ga/posts/ea-ba/</guid>
                 <pubDate>Fri, 27 Mar 2020 10:05:10 +0800</pubDate>
                 
                     <author>wyuleo@gmail.com (scott-wong)</author>
@@ -118,7 +118,7 @@ working...</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                         
@@ -136,8 +136,8 @@ working...</p>
         
             <item>
                 <title>企业架构系列：从CNCF云原生全景图里做技术选型</title>
-                <link>https://scott-wong.github.io/posts/cncf-landscope/</link>
-                <guid isPermaLink="true">https://scott-wong.github.io/posts/cncf-landscope/</guid>
+                <link>https://scott-wong.ga/posts/cncf-landscope/</link>
+                <guid isPermaLink="true">https://scott-wong.ga/posts/cncf-landscope/</guid>
                 <pubDate>Wed, 25 Mar 2020 17:54:08 +0800</pubDate>
                 
                     <author>wyuleo@gmail.com (scott-wong)</author>
@@ -159,7 +159,7 @@ working...</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                         
@@ -169,13 +169,13 @@ working...</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
+                                    <category domain="https://scott-wong.ga/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/cncf/">CNCF</category>
+                                    <category domain="https://scott-wong.ga/tags/cncf/">CNCF</category>
                                 
                             
                         
@@ -185,8 +185,8 @@ working...</p>
         
             <item>
                 <title>企业架构系列：云原生基础设施选型</title>
-                <link>https://scott-wong.github.io/posts/methodology/</link>
-                <guid isPermaLink="true">https://scott-wong.github.io/posts/methodology/</guid>
+                <link>https://scott-wong.ga/posts/methodology/</link>
+                <guid isPermaLink="true">https://scott-wong.ga/posts/methodology/</guid>
                 <pubDate>Wed, 25 Mar 2020 09:56:21 +0800</pubDate>
                 
                     <author>wyuleo@gmail.com (scott-wong)</author>
@@ -400,7 +400,7 @@ Kubesphere优势</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                         
@@ -410,25 +410,25 @@ Kubesphere优势</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
+                                    <category domain="https://scott-wong.ga/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/togaf/">TOGAF</category>
+                                    <category domain="https://scott-wong.ga/tags/togaf/">TOGAF</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/c4%E6%A8%A1%E5%9E%8B/">C4模型</category>
+                                    <category domain="https://scott-wong.ga/tags/c4%E6%A8%A1%E5%9E%8B/">C4模型</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.github.io/tags/%E6%95%8F%E6%8D%B7/">敏捷</category>
+                                    <category domain="https://scott-wong.ga/tags/%E6%95%8F%E6%8D%B7/">敏捷</category>
                                 
                             
                         
@@ -438,8 +438,8 @@ Kubesphere优势</p>
         
             <item>
                 <title>Hello</title>
-                <link>https://scott-wong.github.io/posts/hello/</link>
-                <guid isPermaLink="true">https://scott-wong.github.io/posts/hello/</guid>
+                <link>https://scott-wong.ga/posts/hello/</link>
+                <guid isPermaLink="true">https://scott-wong.ga/posts/hello/</guid>
                 <pubDate>Tue, 24 Mar 2020 17:05:58 +0800</pubDate>
                 
                     <author>wyuleo@gmail.com (scott-wong)</author>

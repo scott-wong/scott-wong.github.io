@@ -1,11 +1,26 @@
 apiVersion: v1
 entries:
+  apisix:
+  - apiVersion: v2
+    appVersion: "1.1"
+    created: "2020-04-10T18:15:53.197423937+08:00"
+    description: A Helm chart for apisix using Kubernetes
+    digest: cb598df028c0c8527f425ec748e1174449aee0607cf3535f94004002ee9e110b
+    home: https://github.com/scott-wong/helm-charts/apisix
+    keywords:
+    - apisix
+    - api gateway
+    name: apisix
+    type: application
+    urls:
+    - https://scott-wong.github.io/charts/apisix-0.1.0.tgz
+    version: 0.1.0
   cmak:
   - apiVersion: v2
     appVersion: 3.0.0.4
-    created: "2020-04-02T12:51:10.430163859+08:00"
+    created: "2020-04-10T18:15:53.197884259+08:00"
     description: A Helm chart for CMAK
-    digest: bd74071997900bc652f7d6b9b8180fa6e1fe7ff028df7861aa87dbd414618b38
+    digest: 3db3c0f83c31ce91467a5e4c43b6716209422f23eb0c2b6ba59f30dfd0e188df
     home: https://github.com/scott-wong/helm-charts/cmak
     keywords:
     - kafka
@@ -18,9 +33,9 @@ entries:
   nacos:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2020-04-02T12:51:10.4315515+08:00"
+    created: "2020-04-10T18:15:53.198724395+08:00"
     description: A Nacos Helm chart for Kubernetes
-    digest: 20f2d709aca8afd4c236f913d1b3791be3d5a7541f260ae147ca5add8b592e59
+    digest: cc050aac87e1a7a53e785ae281cef2daae3fa82dc73b04bf7698fdc18adcb309
     home: https://github.com/scott-wong/helm-charts/nacos
     icon: https://scott-wong.github.io/charts/icons/nacos_colorful.png
     keywords:
@@ -32,4 +47,4 @@ entries:
     urls:
     - https://scott-wong.github.io/charts/nacos-0.1.1.tgz
     version: 0.1.1
-generated: "2020-04-02T12:51:10.429191953+08:00"
+generated: "2020-04-10T18:15:53.196719033+08:00"

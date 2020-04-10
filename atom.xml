@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">scott-wong/岛民宇哥</title>
     <subtitle type="html">scott-wong/岛民宇哥的个人网站，最近专注企业架构和云原生技术体系。</subtitle>
-    <updated>2020-04-02T17:33:04+08:00</updated>
+    <updated>2020-04-10T18:23:26+08:00</updated>
     <id>https://scott-wong.ga/</id>
     <link rel="alternate" type="text/html" href="https://scott-wong.ga/" />
     <link rel="self" type="application/atom+xml" href="https://scott-wong.ga/atom.xml" />
@@ -17,10 +17,73 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.68.3">Hugo</generator>
         <entry>
+            <title type="text">交付项目实施方法论</title>
+            <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/pm-methodology/" />
+            <id>https://scott-wong.ga/posts/pm-methodology/</id>
+            <updated>2020-04-10T18:23:23+08:00</updated>
+            <published>2020-04-02T17:05:58+08:00</published>
+            <author>
+                    <name>scott-wong/岛民宇哥</name>
+                    <uri>https://scott-wong.ga</uri>
+                    <email>wyuleo@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    
+    <summary type="html"><![CDATA[最近看CGAF体会是各个体系架构都是互相借鉴融合发展的，这些年做了很多项目，根据经验……]]></summary>
+            
+                <content type="html"><![CDATA[<p>最近看CGAF体会是各个体系架构都是互相借鉴融合发展的，这些年做了很多项目，根据经验也通过融合+裁剪总结出一套项目实施方法论，适用性如何还请各位看官品评。</p>
+<p>敏捷项目管理+BPMN+C4模型(七种图)+UML(用例图、状态图、时序图、类图、活动图、E-R图)。</p>
+<h3 id="uml使用场景基于java开发手册修改">UML使用场景（基于《Java开发手册》修改）：</h3>
+<ul>
+<li>用例图<br>
+【强制】在需求分析阶段，如果与系统交互的 User 超过一类并且相关的 User Case 超过 5 个，使用用例图来表达更加清晰的结构化需求。</li>
+<li>状态图<br>
+【强制】如果某个业务对象的状态超过 3 个，使用状态图来表达并且明确状态变化的各个触
+发条件。</li>
+<li>时序图(可用C4动态图替代)<br>
+【强制】如果系统中某个功能的调用链路上的涉及对象超过 3 个，使用UML时序图/C4动态图来表达并且明确各调用环节的输入与输出。</li>
+<li>类图<br>
+【强制】如果系统中模型类超过 5 个，并且存在复杂的依赖关系，使用UML类图来表达并且明确类之间的关系。</li>
+<li>活动图(可用BPMN流程图替代)<br>
+【强制】如果系统中超过 2 个对象之间存在协作关系，并且需要表示复杂的处理流程，使用UML活动图/BPMN流程图来表示。</li>
+</ul>
+<h3 id="入门">入门</h3>
+<p>快速熟悉<a href="https://c4model.com/">C4模型</a></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://scott-wong.ga/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" term="项目管理" label="项目管理" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://scott-wong.ga/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" term="项目管理" label="项目管理" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">企业架构系列：开发规范</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/dev_guideline/" />
             <id>https://scott-wong.ga/posts/dev_guideline/</id>
-            <updated>2020-04-02T17:33:00+08:00</updated>
+            <updated>2020-04-10T18:23:23+08:00</updated>
             <published>2020-04-01T09:38:36+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -50,6 +113,8 @@ md转word</p>
 <li>使用VSCode的Markdown预览，直接复制到Word里，保持格式。</li>
 <li><a href="http://www.writage.com">writage插件</a></li>
 </ul>
+<h2 id="架构设计规范">架构设计规范</h2>
+<h3 id="togaf">TOGAF</h3>
 <h2 id="后端开发规范">后端开发规范</h2>
 <h3 id="java">Java</h3>
 <p>【强制】<a href="https://developer.aliyun.com/special/tech-java">《Java开发手册》</a>,当前最新版1.5.0<br>
@@ -57,7 +122,11 @@ md转word</p>
 <h2 id="前端开发规范">前端开发规范</h2>
 <h3 id="vue">Vue</h3>
 <p><a href="https://www.jianshu.com/p/8b095857f73e">Vue前端开发规范</a></p>
-]]></content>
+<h2 id="数据传输规范">数据传输规范</h2>
+<h3 id="日期时间字段">日期时间字段</h3>
+<p>使用ISO 8601-1：2019规范中的扩展格式，如日期时间组合的格式为</p>
+<pre><code>2020-04-01T09:38:36+08:00
+</code></pre>]]></content>
             
             
             
@@ -91,7 +160,7 @@ md转word</p>
             <title type="text">企业架构系列：业务架构</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/ea-ba/" />
             <id>https://scott-wong.ga/posts/ea-ba/</id>
-            <updated>2020-04-02T17:33:00+08:00</updated>
+            <updated>2020-04-10T18:23:23+08:00</updated>
             <published>2020-03-27T10:05:10+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -134,7 +203,7 @@ working...</p>
             <title type="text">企业架构系列：从CNCF云原生全景图里做技术选型</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/cncf-landscope/" />
             <id>https://scott-wong.ga/posts/cncf-landscope/</id>
-            <updated>2020-04-02T17:33:00+08:00</updated>
+            <updated>2020-04-10T18:23:23+08:00</updated>
             <published>2020-03-25T17:54:08+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -186,9 +255,9 @@ working...</p>
     
         <entry>
             <title type="text">企业架构系列：云原生基础设施选型</title>
-            <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/methodology/" />
-            <id>https://scott-wong.ga/posts/methodology/</id>
-            <updated>2020-04-02T17:33:00+08:00</updated>
+            <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/cloud-native-selection/" />
+            <id>https://scott-wong.ga/posts/cloud-native-selection/</id>
+            <updated>2020-04-10T18:23:23+08:00</updated>
             <published>2020-03-25T09:56:21+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -437,34 +506,6 @@ Kubesphere优势</p>
                                 <category scheme="https://scott-wong.ga/tags/%E6%95%8F%E6%8D%B7/" term="敏捷" label="敏捷" />
                             
                         
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">Hello</title>
-            <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/hello/" />
-            <id>https://scott-wong.ga/posts/hello/</id>
-            <updated>2020-04-02T17:33:00+08:00</updated>
-            <published>2020-03-24T17:05:58+08:00</published>
-            <author>
-                    <name>scott-wong/岛民宇哥</name>
-                    <uri>https://scott-wong.ga</uri>
-                    <email>wyuleo@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[first hugo blog.]]></summary>
-            
-                <content type="html"><![CDATA[<p>first hugo blog.</p>
-]]></content>
-            
-            
-            
-            
-            
-                
-                    
-                
                     
                 
             

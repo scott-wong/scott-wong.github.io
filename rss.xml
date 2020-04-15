@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 15 Apr 2020 16:53:39 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 15 Apr 2020 17:11:06 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.ga/rss.xml" />
         
@@ -96,7 +96,7 @@ Kafka在大数据流处理、日志等场景用的多，RocketMQ在国内通用�
 <h2 id="14-持续集成部署">1.4 持续集成/部署</h2>
 <p><img src="/images/cncf-landscope-cicd.png" alt="CNCF全景图-CI/CD"></p>
 <p>CI/CD工具图里面常用的Jenkins + Gitlab，开源项目用Travis CI。<br>
-建议通1.3.</p>
+建议同1.3.</p>
 <h1 id="2编排与治理层">2.编排与治理层</h1>
 <p>编排与治理层（Orchestration Management）由计划与编排(Scheduling &amp; Orchestration)、协调与服务发现(Coordination &amp; Service Discovery)、远程过程调用(Remote Procedure Call)、服务代理(Service Proxy)、API网关、服务网格(Service Mesh)等六部分组成。</p>
 <h2 id="21-计划与编排">2.1 计划与编排</h2>

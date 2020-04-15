@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">scott-wong/岛民宇哥</title>
     <subtitle type="html">scott-wong/岛民宇哥的个人网站，最近专注企业架构和云原生技术体系。</subtitle>
-    <updated>2020-04-15T16:53:39+08:00</updated>
+    <updated>2020-04-15T17:11:06+08:00</updated>
     <id>https://scott-wong.ga/</id>
     <link rel="alternate" type="text/html" href="https://scott-wong.ga/" />
     <link rel="self" type="application/atom+xml" href="https://scott-wong.ga/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">企业架构系列：从CNCF云原生全景图里做技术选型</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/cncf-landscope/" />
             <id>https://scott-wong.ga/posts/cncf-landscope/</id>
-            <updated>2020-04-15T16:53:35+08:00</updated>
+            <updated>2020-04-15T17:11:01+08:00</updated>
             <published>2020-04-14T17:54:08+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -89,7 +89,7 @@ Kafka在大数据流处理、日志等场景用的多，RocketMQ在国内通用�
 <h2 id="14-持续集成部署">1.4 持续集成/部署</h2>
 <p><img src="/images/cncf-landscope-cicd.png" alt="CNCF全景图-CI/CD"></p>
 <p>CI/CD工具图里面常用的Jenkins + Gitlab，开源项目用Travis CI。<br>
-建议通1.3.</p>
+建议同1.3.</p>
 <h1 id="2编排与治理层">2.编排与治理层</h1>
 <p>编排与治理层（Orchestration Management）由计划与编排(Scheduling &amp; Orchestration)、协调与服务发现(Coordination &amp; Service Discovery)、远程过程调用(Remote Procedure Call)、服务代理(Service Proxy)、API网关、服务网格(Service Mesh)等六部分组成。</p>
 <h2 id="21-计划与编排">2.1 计划与编排</h2>
@@ -389,7 +389,7 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
             <title type="text">交付项目实施方法论</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/pm-methodology/" />
             <id>https://scott-wong.ga/posts/pm-methodology/</id>
-            <updated>2020-04-15T16:53:35+08:00</updated>
+            <updated>2020-04-15T17:11:01+08:00</updated>
             <published>2020-04-02T17:05:58+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -452,7 +452,7 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
             <title type="text">企业架构系列：开发规范</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/dev_guideline/" />
             <id>https://scott-wong.ga/posts/dev_guideline/</id>
-            <updated>2020-04-15T16:53:35+08:00</updated>
+            <updated>2020-04-15T17:11:01+08:00</updated>
             <published>2020-04-01T09:38:36+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -535,7 +535,7 @@ md转word</p>
             <title type="text">企业架构系列：业务架构</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/ea-ba/" />
             <id>https://scott-wong.ga/posts/ea-ba/</id>
-            <updated>2020-04-15T16:53:35+08:00</updated>
+            <updated>2020-04-15T17:11:01+08:00</updated>
             <published>2020-03-27T10:05:10+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>
@@ -584,7 +584,7 @@ working...</p>
             <title type="text">企业架构系列：云原生基础设施选型</title>
             <link rel="alternate" type="text/html" href="https://scott-wong.ga/posts/cloud-native-selection/" />
             <id>https://scott-wong.ga/posts/cloud-native-selection/</id>
-            <updated>2020-04-15T16:53:35+08:00</updated>
+            <updated>2020-04-15T17:11:01+08:00</updated>
             <published>2020-03-25T09:56:21+08:00</published>
             <author>
                     <name>scott-wong/岛民宇哥</name>

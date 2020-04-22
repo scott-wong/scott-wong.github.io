@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   apisix:
   - apiVersion: v2
-    appVersion: "1.1"
-    created: "2020-04-17T11:37:52.644442513+08:00"
+    appVersion: "1.2"
+    created: "2020-04-22T15:15:49.751423679+08:00"
     description: A Helm chart for apisix using Kubernetes
-    digest: 4fcc074bf3fb3d0623bb5e8ababb51b4d8c992c3a772c185fd5fde4a20a62227
+    digest: 8c3928834e03ccd2e2514d3f9ec22cb79836f19781bd5d1822b03507b6e94659
     home: https://github.com/scott-wong/helm-charts/apisix
     keywords:
     - apisix
@@ -13,14 +13,14 @@ entries:
     name: apisix
     type: application
     urls:
-    - https://scott-wong.github.io/charts/apisix-0.1.0.tgz
-    version: 0.1.0
+    - https://scott-wong.github.io/charts/apisix-0.1.1.tgz
+    version: 0.1.1
   cmak:
   - apiVersion: v2
     appVersion: 3.0.0.4
-    created: "2020-04-17T11:37:52.644960719+08:00"
+    created: "2020-04-22T15:15:49.752088246+08:00"
     description: A Helm chart for CMAK
-    digest: 2f80768e487b276903fe9e6f55e9dc2042ccb81e00d36fec2409ee766c136f40
+    digest: 11b75952b7817f0827118f9e39d67e879324650f5a8e9ac120516016d6bf536d
     home: https://github.com/scott-wong/helm-charts/cmak
     keywords:
     - kafka
@@ -33,14 +33,14 @@ entries:
   kong:
   - apiVersion: v1
     appVersion: "2"
-    created: "2020-04-17T11:37:52.650143396+08:00"
+    created: "2020-04-22T15:15:49.758547388+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 8.6.8
     description: The Cloud-Native Ingress and API-management
-    digest: e05f5c31da1b05d7477c9eeeafd713b777421a1d65637fee46542cb76c629ebd
+    digest: 2fdb58ff4d4c91dd7cdb9e08f056be8d3e908f756c7c4f55079665f8a31df373
     home: https://konghq.com/
     icon: https://s3.amazonaws.com/downloads.kong/universe/assets/icon-kong-inc-large.png
     maintainers:
@@ -55,9 +55,9 @@ entries:
   konga:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-04-17T11:37:52.650585348+08:00"
+    created: "2020-04-22T15:15:49.759029608+08:00"
     description: A Helm chart for Kubernetes
-    digest: 0929fe7845e2462d377cf7e36d8fbccf1c58b8c80f25f55c60e5e1aad8c9c363
+    digest: 0ae60e150485eb5d6b4aae7836b05279b46bfc326a73aed55b580b9cc31b6654
     name: konga
     urls:
     - https://scott-wong.github.io/charts/konga-1.0.0.tgz
@@ -65,9 +65,9 @@ entries:
   nacos:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2020-04-17T11:37:52.651675062+08:00"
+    created: "2020-04-22T15:15:49.760029377+08:00"
     description: A Nacos Helm chart for Kubernetes
-    digest: 2e5f46aabc292321e24e20eeb7ae66c79135295ecb2cf717dc0670941adb50b1
+    digest: 4f07ef98d1b9e0be2d129e109924163781c18a5caa938d48f13aa59cbd928c55
     home: https://github.com/scott-wong/helm-charts/nacos
     icon: https://scott-wong.github.io/charts/icons/nacos_colorful.png
     keywords:
@@ -79,4 +79,4 @@ entries:
     urls:
     - https://scott-wong.github.io/charts/nacos-0.1.1.tgz
     version: 0.1.1
-generated: "2020-04-17T11:37:52.643087858+08:00"
+generated: "2020-04-22T15:15:49.750396599+08:00"

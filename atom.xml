@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">scott-wong/王宇</title>
     <subtitle type="html">scott-wong/岛民宇哥的个人网站，最近专注企业架构和云原生技术体系。</subtitle>
-    <updated>2020-11-26T09:51:05+00:00</updated>
+    <updated>2020-11-26T18:12:13+08:00</updated>
     <id>https://wangyu.space/</id>
     <link rel="alternate" type="text/html" href="https://wangyu.space/" />
     <link rel="self" type="application/atom+xml" href="https://wangyu.space/atom.xml" />
@@ -20,11 +20,11 @@
             <title type="text">K3s快速部署到centos7</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/k3s/" />
             <id>https://wangyu.space/posts/k3s/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-06-23T15:28:30+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[官方快速部署 安装依赖 yum install -y container-selinux selinux-policy-base rpm -i https://rpm.rancher.io/k3s-selinux-0.1.1-rc1.el7.noarch.rpm 运行安装脚本 curl -sfL https://docs.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh - 卸载 /usr/local/bin/k3s-uninstall.sh]]></summary>
@@ -73,11 +73,11 @@ rpm -i https://rpm.rancher.io/k3s-selinux-0.1.1-rc1.el7.noarch.rpm
             <title type="text">统一日志平台：EFK单节点部署</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/efk-one-node/" />
             <id>https://wangyu.space/posts/efk-one-node/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-05-22T09:56:21+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
@@ -248,11 +248,11 @@ echo &quot;&quot; &gt; $logdir/access.log
             <title type="text">企业架构系列：从CNCF云原生全景图里做技术选型</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/cncf-landscope/" />
             <id>https://wangyu.space/posts/cncf-landscope/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-04-14T17:54:08+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
@@ -622,11 +622,11 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
             <title type="text">交付项目实施方法论</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/pm-methodology/" />
             <id>https://wangyu.space/posts/pm-methodology/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-04-02T17:05:58+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
@@ -685,11 +685,11 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
             <title type="text">企业架构系列：开发规范</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/dev_guideline/" />
             <id>https://wangyu.space/posts/dev_guideline/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-04-01T09:38:36+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
@@ -768,11 +768,11 @@ md转word</p>
             <title type="text">企业架构系列：业务架构</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/ea-ba/" />
             <id>https://wangyu.space/posts/ea-ba/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-03-27T10:05:10+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[CGAF包括业务架构、数据架构、应用架构、技术及基础设施架构、安全架构。 working...]]></summary>
@@ -817,11 +817,11 @@ working...</p>
             <title type="text">企业架构系列：云原生基础设施选型</title>
             <link rel="alternate" type="text/html" href="https://wangyu.space/posts/cloud-native-selection/" />
             <id>https://wangyu.space/posts/cloud-native-selection/</id>
-            <updated>2020-11-26T09:51:03+00:00</updated>
+            <updated>2020-11-26T18:12:09+08:00</updated>
             <published>2020-03-25T09:56:21+08:00</published>
             <author>
                     <name>scott-wong/王宇</name>
-                    <uri>https://wangyu.space</uri>
+                    <uri>https://scott-wong.ga</uri>
                     <email>mm@wangyu.space</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>

@@ -10,7 +10,7 @@
         <title>scott-wong/王宇</title>
         <link>https://wangyu.space/</link>
         <description>scott-wong/岛民宇哥的个人网站，最近专注企业架构和云原生技术体系。</description>
-        <generator>Hugo 0.64.1 https://gohugo.io/</generator>
+        <generator>Hugo 0.68.3 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 26 Nov 2020 09:34:19 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 26 Nov 2020 09:38:14 +0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://wangyu.space/rss.xml" />
         

@@ -7,39 +7,259 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>scott-wong/岛民宇哥</title>
-        <link>https://scott-wong.ga/</link>
+        <title>scott-wong/王宇</title>
+        <link>https://wangyu.space/</link>
         <description>scott-wong/岛民宇哥的个人网站，最近专注企业架构和云原生技术体系。</description>
-        <generator>Hugo 0.68.3 https://gohugo.io/</generator>
+        <generator>Hugo 0.64.1 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
-            <managingEditor>wyuleo@gmail.com (scott-wong/岛民宇哥)</managingEditor>
+            <managingEditor>mm@wangyu.space (scott-wong/王宇)</managingEditor>
         
         
-            <webMaster>wyuleo@gmail.com (scott-wong/岛民宇哥)</webMaster>
+            <webMaster>mm@wangyu.space (scott-wong/王宇)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 15 Apr 2020 17:11:06 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 26 Nov 2020 09:34:19 +0000</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss+xml" href="https://scott-wong.ga/rss.xml" />
+            <atom:link rel="self" type="application/rss+xml" href="https://wangyu.space/rss.xml" />
         
         
             <item>
+                <title>K3s快速部署到centos7</title>
+                <link>https://wangyu.space/posts/k3s/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/k3s/</guid>
+                <pubDate>Tue, 23 Jun 2020 15:28:30 +0800</pubDate>
+                
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description><![CDATA[<h1 id="官方快速部署">官方快速部署</h1>
+<ol>
+<li>安装依赖</li>
+</ol>
+<pre><code>yum install -y container-selinux selinux-policy-base
+rpm -i https://rpm.rancher.io/k3s-selinux-0.1.1-rc1.el7.noarch.rpm
+</code></pre><ol start="2">
+<li>运行安装脚本</li>
+</ol>
+<pre><code>curl -sfL https://docs.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -
+</code></pre><p>卸载</p>
+<pre><code>/usr/local/bin/k3s-uninstall.sh
+</code></pre>]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://wangyu.space/categories/k8s/">k8s</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>统一日志平台：EFK单节点部署</title>
+                <link>https://wangyu.space/posts/efk-one-node/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/efk-one-node/</guid>
+                <pubDate>Fri, 22 May 2020 09:56:21 +0800</pubDate>
+                
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description><![CDATA[<h2 id="efk单节点部署">EFK单节点部署</h2>
+<p>本层版本选择7.7.</p>
+<h2 id="1-安装es">1. 安装es</h2>
+<h3 id="11-下载es">1.1 下载es</h3>
+<p><a href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a>
+推荐rpm</p>
+<h3 id="12-上传安装包安装es">1.2 上传安装包安装es</h3>
+<pre><code>rpm -ivh elasticsearch-7.7.0-x86_64.rpm
+sudo systemctl daemon-reload
+sudo systemctl enable elasticsearch.service
+</code></pre><p>以下可选<br>
+<code>vim /etc/sysctl.conf</code><br>
+添加或修改
+<code>vm.max_map_count=262144</code>
+<code>sudo sysctl -p</code></p>
+<p>防止 es 启动时出现如下错误： max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p>
+<pre><code>vim /etc/security/limits.conf
+* soft memlock 100000
+* hard memlock 100000
+* soft nproc 100000
+* hard nproc 100000
+</code></pre><p>以上</p>
+<h3 id="13-配置es">1.3 配置es</h3>
+<pre><code>#按需配置jvm.options, 默认-Xms1g -Xmx1g  
+#推荐：如果足够的内存，也尽量不要 超过 32 GB。即每个节点内存分配不超过 32 GB。 因为它浪费了内存，降低了 CPU 的性能，还要让 GC 应对大内存。如果你想保证其安全可靠，设置堆内存为 31 GB 是一个安全的选择。
+
+vim /etc/elasticsearch/jvm.options
+
+vim /etc/elasticsearch/elasticsearch.yml
+#修改如下基础配置
+network.host: 10.119.31.209
+discovery.seed_hosts: [&quot;10.119.31.209&quot;]
+
+</code></pre><h3 id="配置-tls-和身份验证推荐">配置 TLS 和身份验证（推荐）</h3>
+<p>rpm安装es默认home路径：/usr/share/elasticsearch</p>
+<pre><code>#在 Elasticsearch 主节点上配置 TLS
+/usr/share/elasticsearch/bin/elasticsearch-certutil cert -out /etc/elasticsearch/elastic-certificates.p12 -pass &quot;&quot;
+
+chmod 640 /etc/elasticsearch/elastic-certificates.p12
+
+vim /etc/elasticsearch/elasticsearch.yml
+#添加安全配置
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
+
+#启动es  
+systemctl start elasticsearch
+
+#自动设置elastic,apm_system,kibana,logstash_system,beats_system,remote_monitoring_user的密码，记得保存，也可以把auto改成interactive手动设置密码
+/usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto
+</code></pre><p>浏览器打开http://10.119.31.209:9200/</p>
+<h2 id="2-安装kibana">2. 安装kibana</h2>
+<pre><code>rpm -ivh kibana-7.7.0-x86_64.rpm
+vim  
+#修改如下配置
+server.host: &quot;10.119.31.209&quot;
+elasticsearch.hosts: [&quot;http://10.119.31.209:9200&quot;]
+elasticsearch.username: &quot;kibana&quot;
+elasticsearch.password: &quot;password&quot;
+i18n.locale: &quot;zh-CN&quot;
+
+#启动kibana
+systemctl start kibana.service
+</code></pre><h2 id="3-安装filebeat">3. 安装filebeat</h2>
+<p>filebeat默认支持几十种采集模块，如nginx, kafka, mysql等，可按需配置或完全自定义配置路径。</p>
+<h3 id="31-nginx日志收集">3.1 nginx日志收集</h3>
+<pre><code>#nginx节点安装filebeat
+rpm -ivh filebeat-7.7.0-x86_64.rpm
+vim 
+output.elasticsearch:
+  hosts: [&quot;&lt;es_url&gt;&quot;]
+  username: &quot;elastic&quot;
+  password: &quot;&lt;password&gt;&quot;
+setup.kibana:
+  host: &quot;&lt;kibana_url&gt;&quot;
+</code></pre><pre><code>#启用nginx模块
+sudo filebeat modules enable nginx
+#修改采集路径
+vim /etc/filebeat/modules.d/nginx.yml
+- module: nginx
+  # Access logs
+  access:
+    enabled: true
+    var.paths: [&quot;/app/openresty/nginx/logs/access*.log&quot;]
+</code></pre><pre><code>#setup 命令加载 Kibana 仪表板。如果仪表板已设置，请省略此命令。
+sudo filebeat setup
+#启动filebeat
+sudo systemctl start filebeat
+</code></pre><h3 id="32-配置索引生命周期管理">3.2 配置索引生命周期管理</h3>
+<p>http://xxx/app/kibana#/management/elasticsearch/index_lifecycle_management/policies/edit/filebeat</p>
+<p>按需配置保留的日志索引大小。</p>
+<h3 id="33-原日志文件清理">3.3 原日志文件清理</h3>
+<p>如接入EFK日志平台后，不想保留原始日志文件，最方便的方案如下：</p>
+<ol>
+<li>不分割日志，如nginx按天分割；</li>
+<li>编写个脚本把日志文件内容清空，设定每天或每周执行一次。</li>
+</ol>
+<pre><code>#!/bin/bash
+# nginx-logs-flush.sh
+logdir=/app/openresty/nginx/logs
+echo &quot;&quot; &gt; $logdir/error.log
+echo &quot;&quot; &gt; $logdir/access.log
+</code></pre><p>定时任务，如下为每周日凌晨两点执行</p>
+<pre><code>crontab -l
+0 2 * * 0 /app/openresty/nginx/logs/nginx-logs-flush.sh
+</code></pre><hr>
+<p>参考官方文档：<br>
+<a href="https://www.elastic.co/cn/blog/getting-started-with-elasticsearch-security">https://www.elastic.co/cn/blog/getting-started-with-elasticsearch-security</a><br>
+<a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html">https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html</a></p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://wangyu.space/categories/%E9%83%A8%E7%BD%B2/">部署</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://wangyu.space/tags/elasticsearch/">elasticsearch</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://wangyu.space/tags/filebeat/">filebeat</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://wangyu.space/tags/kibana/">kibana</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://wangyu.space/tags/%E6%97%A5%E5%BF%97/">日志</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
                 <title>企业架构系列：从CNCF云原生全景图里做技术选型</title>
-                <link>https://scott-wong.ga/posts/cncf-landscope/</link>
-                <guid isPermaLink="true">https://scott-wong.ga/posts/cncf-landscope/</guid>
+                <link>https://wangyu.space/posts/cncf-landscope/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/cncf-landscope/</guid>
                 <pubDate>Tue, 14 Apr 2020 17:54:08 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description><![CDATA[<h1 id="概述">概述</h1>
-<p>从全局视角了解云原生生态可以直接看<a href="https://landscape.cncf.io/">CNCF全景图</a>，截止2020年4月14日已有1,373个图标。包含应用定义与开发层（App Definition and Development）、编排与治理层（Orchestration Management）、运行时（Runtime）、供应保障层（Provisioning）、平台（Platform）、观察与分析（Observability and Analysis）、无服务（Serverless）、云服务商（Special）和CNCF成员（Members）八个层次。<br>
+<p>从全局视角了解云原生生态可以直接看<a href="https://landscape.cncf.io/">CNCF全景图</a>，截止2020年4月27日已有1,382个图标。包含应用定义与开发层（App Definition and Development）、编排与治理层（Orchestration Management）、运行时（Runtime）、供应保障层（Provisioning）、平台（Platform）、观察与分析（Observability and Analysis）、无服务（Serverless）、云服务商（Special）和CNCF成员（Members）八个层次。<br>
 <img src="/images/cncf-landscope.png" alt="CNCF全景图"><br>
 从CNCF全景图里做技术选型是个比较靠谱的方法，具体还是根据客户需要或行业特点来选。
 本文重点介绍图中涉及的开源项目。</p>
@@ -95,8 +315,12 @@ Kafka在大数据流处理、日志等场景用的多，RocketMQ在国内通用�
 <p>比较奇怪的是华为开源的ServiceComb微服务框架放在了这层。</p>
 <h2 id="14-持续集成部署">1.4 持续集成/部署</h2>
 <p><img src="/images/cncf-landscope-cicd.png" alt="CNCF全景图-CI/CD"></p>
-<p>CI/CD工具图里面常用的Jenkins + Gitlab，开源项目用Travis CI。<br>
-建议同1.3.</p>
+<ul>
+<li>Jenkins + Gitlab，CI/CD工具图里面常用的，开源项目用Travis CI。</li>
+<li>Spinnaker，国外用的比较多的跨云持续部署工具，参考https://blog.csdn.net/yejingtao703/article/details/102328579。</li>
+<li>Tekton，knative推荐的k8s原生流水线工具。</li>
+</ul>
+<p>建议同1.3.</p>
 <h1 id="2编排与治理层">2.编排与治理层</h1>
 <p>编排与治理层（Orchestration Management）由计划与编排(Scheduling &amp; Orchestration)、协调与服务发现(Coordination &amp; Service Discovery)、远程过程调用(Remote Procedure Call)、服务代理(Service Proxy)、API网关、服务网格(Service Mesh)等六部分组成。</p>
 <h2 id="21-计划与编排">2.1 计划与编排</h2>
@@ -291,6 +515,7 @@ Beats，Elastic出品的轻量数据采集器在文件日志等场景比较有�
 <p>主流追踪系统有Jaeger,Pinpoint,Zipkin,CAT,Skywalking等，其中Zipkin和CAT对代码有一定的侵入性。</p>
 <ul>
 <li>Jaeger，CNCF毕业项目，来自Uber。</li>
+<li>OpenTelemetry, 整合OpenTracing和OpenCensus，终态是实现Metrics、Tracing、Logging的融合，作为CNCF可观察性的终极解决方案。</li>
 <li>OpenTracing，孵化中项目，追踪标准规范。</li>
 <li>Pinpoint，依赖HBase。</li>
 <li>Skywalking，国人开源的应用程序性能监视工具。</li>
@@ -332,7 +557,7 @@ Serverless独立一个全景图，可见CNCF对Serverless的重视程度。
 <p>先重点介绍下Knative，基于Kubernetes的Serverless解决方案，旨在标准化Serverless，简化其学习成本。Knative包含三个主要子项目：</p>
 <ul>
 <li>Serving 提供缩容至零、请求驱动的计算功能。它本质上是无服务器平台的执行和扩展组件。</li>
-<li>Build 提供显式&quot;运行至完成&quot;功能，这对创建 CI/CD 工作流程很有用。Serving 使用它将源存储库转换为包含应用程序的容器镜像。</li>
+<li>Build 提供显式&quot;运行至完成&quot;功能，这对创建 CI/CD 工作流程很有用。Serving 使用它将源存储库转换为包含应用程序的容器镜像。（官方已经停止维护，建议切换到Tekton Pipelines）</li>
 <li>Eventing 提供抽象的交付和订阅机制，允许构建松散耦合和事件驱动的无服务器应用程序。</li>
 </ul>
 <p>其他Serverless可安装平台，现在是百花齐放，只介绍几个代表性的平台：</p>
@@ -362,13 +587,13 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://wangyu.space/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/">技术架构</category>
+                                    <category domain="https://wangyu.space/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/">技术架构</category>
                                 
                             
                         
@@ -378,13 +603,13 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
+                                    <category domain="https://wangyu.space/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/cncf/">CNCF</category>
+                                    <category domain="https://wangyu.space/tags/cncf/">CNCF</category>
                                 
                             
                         
@@ -394,11 +619,11 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
         
             <item>
                 <title>交付项目实施方法论</title>
-                <link>https://scott-wong.ga/posts/pm-methodology/</link>
-                <guid isPermaLink="true">https://scott-wong.ga/posts/pm-methodology/</guid>
+                <link>https://wangyu.space/posts/pm-methodology/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/pm-methodology/</guid>
                 <pubDate>Thu, 02 Apr 2020 17:05:58 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -432,7 +657,7 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">项目管理</category>
+                                    <category domain="https://wangyu.space/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">项目管理</category>
                                 
                             
                         
@@ -442,7 +667,7 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">项目管理</category>
+                                    <category domain="https://wangyu.space/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">项目管理</category>
                                 
                             
                         
@@ -452,11 +677,11 @@ Camel是一个基于Enterprise Integration Pattern(企业整合模式，简称EI
         
             <item>
                 <title>企业架构系列：开发规范</title>
-                <link>https://scott-wong.ga/posts/dev_guideline/</link>
-                <guid isPermaLink="true">https://scott-wong.ga/posts/dev_guideline/</guid>
+                <link>https://wangyu.space/posts/dev_guideline/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/dev_guideline/</guid>
                 <pubDate>Wed, 01 Apr 2020 09:38:36 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -504,13 +729,13 @@ md转word</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://wangyu.space/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/">技术架构</category>
+                                    <category domain="https://wangyu.space/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/">技术架构</category>
                                 
                             
                         
@@ -520,7 +745,7 @@ md转word</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">开发规范</category>
+                                    <category domain="https://wangyu.space/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">开发规范</category>
                                 
                             
                         
@@ -530,11 +755,11 @@ md转word</p>
         
             <item>
                 <title>企业架构系列：业务架构</title>
-                <link>https://scott-wong.ga/posts/ea-ba/</link>
-                <guid isPermaLink="true">https://scott-wong.ga/posts/ea-ba/</guid>
+                <link>https://wangyu.space/posts/ea-ba/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/ea-ba/</guid>
                 <pubDate>Fri, 27 Mar 2020 10:05:10 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -552,13 +777,13 @@ working...</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://wangyu.space/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84/">业务架构</category>
+                                    <category domain="https://wangyu.space/categories/%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84/">业务架构</category>
                                 
                             
                         
@@ -576,11 +801,11 @@ working...</p>
         
             <item>
                 <title>企业架构系列：云原生基础设施选型</title>
-                <link>https://scott-wong.ga/posts/cloud-native-selection/</link>
-                <guid isPermaLink="true">https://scott-wong.ga/posts/cloud-native-selection/</guid>
+                <link>https://wangyu.space/posts/cloud-native-selection/</link>
+                <guid isPermaLink="true">https://wangyu.space/posts/cloud-native-selection/</guid>
                 <pubDate>Wed, 25 Mar 2020 09:56:21 +0800</pubDate>
                 
-                    <author>wyuleo@gmail.com (scott-wong/岛民宇哥)</author>
+                    <author>mm@wangyu.space (scott-wong/王宇)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -590,8 +815,12 @@ working...</p>
 本文基于作者多年跨行业项目实践经验和数月来的研究提出云原生基础设施的选型建议，主要面向有私有云部署需求的公司，小公司建议直接上公有云。<br>
 毕竟每家公司的组织结构和业务技术需求千差万别，文中的选型也没法做到面面俱到，如有疏漏和错误，敬请指正。</p>
 <hr>
+<h2 id="什么是云原生">什么是云原生</h2>
+<p>CNCF云原生定义：<br>
+云原生技术有利于各组织在公有云、私有云和混合云等新型动态环境中，构建和运行可弹性扩展的应用。云原生的代表技术包括容器、服务网格、微服务、不可变基础设施和声明式 API。<br>
+<img src="/images/cloudnative.png" alt="云原生定义"></p>
 <h2 id="云原生生态图">云原生生态图</h2>
-<p>从全局视角了解云原生生态可以直接看<a href="https://landscape.cncf.io/">CNCF全景图</a>，截止2020年3月25日已有1,359个图标。包含应用定义与开发层（App Definition and Development）、编排与治理层（Orchestration Management）、运行时层（Runtime）、供应保障层（Provisioning）、云服务商（Special）、平台（Platform）、观察与分析（Observability and Analysis）、无服务（Serverless）和CNCF成员（Members）八个层次。<br>
+<p>从全局视角了解云原生生态可以直接看<a href="https://landscape.cncf.io/">CNCF全景图</a>，截止2020年4月27日已有1,382个图标。包含应用定义与开发层（App Definition and Development）、编排与治理层（Orchestration Management）、运行时层（Runtime）、供应保障层（Provisioning）、云服务商（Special）、平台（Platform）、观察与分析（Observability and Analysis）、无服务（Serverless）和CNCF成员（Members）八个层次。<br>
 <img src="/images/cncf-landscope.png" alt="CNCF全景图">
 作者并没有全面研究每个层级，下面仅列出日常用到的产品或工具，下篇文章计划按全景图的层级划分重新梳理选型。</p>
 <h2 id="1-选型清单">1. 选型清单</h2>
@@ -791,7 +1020,7 @@ Kubesphere优势</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/categories/%E6%9E%B6%E6%9E%84/">架构</category>
+                                    <category domain="https://wangyu.space/categories/%E6%9E%B6%E6%9E%84/">架构</category>
                                 
                             
                         
@@ -801,25 +1030,25 @@ Kubesphere优势</p>
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
+                                    <category domain="https://wangyu.space/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">云原生</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/togaf/">TOGAF</category>
+                                    <category domain="https://wangyu.space/tags/togaf/">TOGAF</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/c4%E6%A8%A1%E5%9E%8B/">C4模型</category>
+                                    <category domain="https://wangyu.space/tags/c4%E6%A8%A1%E5%9E%8B/">C4模型</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://scott-wong.ga/tags/%E6%95%8F%E6%8D%B7/">敏捷</category>
+                                    <category domain="https://wangyu.space/tags/%E6%95%8F%E6%8D%B7/">敏捷</category>
                                 
                             
                         
